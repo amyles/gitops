@@ -14,6 +14,7 @@ spec:
   template:
     metadata:
       annotations:
+        gitops.training.sass.ro/appVersion: {{.Chart.AppVersion | quote}}
         link.argocd.argoproj.io/external-link: http://labs.sass.ro:{{.Values.service.externalPort}}
       {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
